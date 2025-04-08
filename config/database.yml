@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For a local Postgres database, often host is localhost, and default port is 5432
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: neighborhood_library_development
+
+test:
+  <<: *default
+  database: neighborhood_library_test
+
+production:
+  <<: *default
+  database: neighborhood_library_production
+  username: neighborhood_library
+  password: <%= ENV['NEIGHBORHOOD_LIBRARY_DATABASE_PASSWORD'] %>
+
