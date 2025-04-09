@@ -5,5 +5,6 @@ class DashboardController < ApplicationController
       marker.lat address.latitude
       marker.lng address.longitude
     end
+    @api_key = Rails.application.credentials.google.gmaps
   end
 end
