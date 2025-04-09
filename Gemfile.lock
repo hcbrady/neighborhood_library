@@ -81,6 +81,7 @@ GEM
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     builder (3.3.0)
+    byebug (12.0.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -90,17 +91,30 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     crass (1.0.6)
+    csv (3.3.2)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.1)
     erubi (1.13.1)
+    execjs (2.10.0)
+    geocoder (1.8.5)
+      base64 (>= 0.1.0)
+      csv (>= 3.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    gmaps4rails (2.1.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
@@ -221,6 +235,7 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    underscore-rails (1.8.3)
     uri (1.0.3)
     useragent (0.16.11)
     web-console (4.2.1)
@@ -246,8 +261,12 @@ DEPENDENCIES
   actionview (= 8.0.1)
   activesupport (= 8.0.1)
   bootsnap
+  byebug (~> 12.0)
   capybara
+  coffee-rails (~> 5.0)
   debug
+  geocoder
+  gmaps4rails
   importmap-rails
   jbuilder
   pg
@@ -259,6 +278,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  underscore-rails
   web-console
 
 RUBY VERSION
