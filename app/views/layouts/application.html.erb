@@ -1,41 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>NeighborhoodLibrary</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-        <style>
-      body {
-        font-family: "Times New Roman", Times, serif;
-        background-color: #fdfdfd;
-        color: #111;
-        max-width: 800px;
-        margin: 2rem auto;
-        line-height: 1.6;
-      }
-      main {
-        overflow: hidden;
-      }
-      header {
-        text-align: center;
-        margin: 2rem 0;
-      }
-      a {
-        color: blue;
-        text-decoration: underline;
-      }
-    </style>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
+<head>
+  <title>NeighborhoodLibrary</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background-color: #fdfdfd;
+      color: #111;
+      max-width: 800px;
+      margin: 2rem auto;
+      line-height: 1.6;
+    }
 
-  <body>
+    main {
+      overflow: hidden;
+    }
+
+    header {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    nav {
+      float: left;
+      width: 200px;
+      margin-right: 2rem;
+    }
+  </style>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+<div class="modal fade" id="cancel_modal" tabindex="-1" role="basic" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Abandon Changes</h4>
+      </div>
+      <div class="modal-body">
+        If you cancel, your changes will not be saved to the database.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn default" data-dismiss="modal" id="close_one_modal" >Go Back</button>
+        <button type="button" class="btn btn red pull-left" data-dismiss="modal" onClick="closeAll()">Close all</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<script>
+  function closeAll() {
+  $('.modal').modal('hide');
+  }
+</script>
   <header>
-      <h1>Neighborhood Library</h1>
-      <hr>
-    </header>
-    <main><%= yield %></main>
-    <%= javascript_include_tag 'application' %>
-  </body>
+    <h1>Neighborhood Library</h1>
+    <hr>
+  </header>
+  <nav>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+    </ul>
+  </nav>
+  <main><%= yield %></main>
+  <%= javascript_include_tag 'application' %>
+</body>
 </html>
