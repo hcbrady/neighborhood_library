@@ -1,0 +1,27 @@
+<h1><%=@user.full_name %></h1>
+<h1><%=@user.address.full_address %></h1>
+<a href="#edit_user" data-toggle="modal">Edit</a>
+
+<div class="modal fade" id="edit_user" tabindex="-1" role="basic" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Details</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @user do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :email %>
+      </div>
+      <div class="modal-footer">
+        <a href="#cancel_modal" data-toggle="modal" class="btn btn-default btn-sm">Cancel</a>
+        <%= f.button :submit, 'Save Changes', class: "btn blue" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
