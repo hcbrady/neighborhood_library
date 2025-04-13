@@ -41,30 +41,6 @@
 </head>
 
 <body>
-<div class="modal fade" id="cancel_modal" tabindex="-1" role="basic" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-        <h4 class="modal-title">Abandon Changes</h4>
-      </div>
-      <div class="modal-body">
-        If you cancel, your changes will not be saved to the database.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn default" data-dismiss="modal" id="close_one_modal" >Go Back</button>
-        <button type="button" class="btn btn red pull-left" data-dismiss="modal" onClick="closeAll()">Close all</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<script>
-  function closeAll() {
-  $('.modal').modal('hide');
-  }
-</script>
   <header>
     <h1>Neighborhood Library</h1>
     <hr>
