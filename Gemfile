@@ -23,6 +23,7 @@ gem "geocoder"
 gem 'underscore-rails'
 gem 'coffee-rails', '~> 5.0'
 gem 'dartsass-sprockets'
+gem 'jquery-rails'
 gem 'bootstrap', '~> 5.3.3'
 gem 'simple_form'
 
