@@ -5,12 +5,37 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+        <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: #fdfdfd;
+        color: #111;
+        max-width: 800px;
+        margin: 2rem auto;
+        line-height: 1.6;
+      }
+      main {
+        overflow: hidden;
+      }
+      header {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+  <header>
+      <h1>Neighborhood Library</h1>
+      <hr>
+    </header>
+    <main><%= yield %></main>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
