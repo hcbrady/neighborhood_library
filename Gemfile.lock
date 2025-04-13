@@ -300,6 +300,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   pg
+  popper_js (~> 2.11.8)
   puma (~> 6.5.0)
   rails (~> 8.0.1)
   railties (= 8.0.1)
