@@ -6,51 +6,66 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application" %>
+
   <style>
     body {
-      font-family: "Times New Roman", Times, serif;
-      background-color: #fdfdfd;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
       color: #111;
+    }
+
+    .content-container {
       max-width: 800px;
       margin: 2rem auto;
-      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    footer.navbar {
+      bottom: 0;
+      width: 100%;
+    }
+
+    header h1 {
+      margin: 1rem 0 0.5rem;
     }
 
     main {
-      overflow: hidden;
-    }
-
-    header {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    a {
-      color: blue;
-      text-decoration: underline;
-    }
-
-    nav {
-      float: left;
-      width: 200px;
-      margin-right: 2rem;
+      padding-bottom: 4rem;
     }
   </style>
-
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 </head>
 
 <body>
-  <header>
+  <!-- Title Header -->
+  <header class="text-center">
     <h1>Neighborhood Library</h1>
     <hr>
   </header>
-  <nav>
-    <ul>
-      <li><%= link_to 'Home', root_path %></li>
-    </ul>
+
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container justify-content-center">
+      <%= link_to "Home", root_path, class: "navbar-brand" %>
+    </div>
   </nav>
-  <main><%= yield %></main>
-  <%= javascript_include_tag 'application' %>
+
+  <!-- Main content area -->
+  <main>
+    <div class="content-container">
+      <%= yield %>
+    </div>
+  </main>
+
+  <!-- Bottom Navbar -->
+  <footer class="navbar navbar-light bg-light">
+    <div class="container justify-content-center">
+      <a class="p-2" href="https://libraryfinder.org/" target="_blank">About</a>
+      <a class="p-2" href="https://github.com/hcbrady/neighborhood_library" target="_blank">GitHub</a>
+      <a class="p-2" href="https://libraryfinder.org/" target="_blank">Library Finder</a>
+      <a class="p-2" href="https://littlefreelibrary.org/map/" target="_blank">Little Free Library Finder</a>
+    </div>
+  </footer>
 </body>
 </html>
