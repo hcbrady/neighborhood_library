@@ -47,11 +47,13 @@
   </header>
 
   <!-- Top Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container justify-content-center">
-      <%= link_to "Home", root_path, class: "navbar-brand" %>
-    </div>
-  </nav>
+  <% if current_user.present? %>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container justify-content-center">
+        <%= link_to "Home", root_path, class: "navbar-brand" %>
+      </div>
+    </nav>
+  <% end %>
 
   <!-- Main content area -->
   <main>
