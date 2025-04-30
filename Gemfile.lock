@@ -77,6 +77,7 @@ GEM
     autoprefixer-rails (10.4.21.0)
       execjs (~> 2)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
@@ -117,6 +118,12 @@ GEM
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     drb (2.2.1)
     erubi (1.13.1)
     execjs (2.10.0)
@@ -173,6 +180,7 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.7-arm64-darwin)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.5.9)
     popper_js (2.11.8)
     pp (0.6.2)
@@ -228,6 +236,9 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.1)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.4.1)
     rubyzip (2.4.1)
     sass-embedded (1.86.3-arm64-darwin)
@@ -265,6 +276,8 @@ GEM
     underscore-rails (1.8.3)
     uri (1.0.3)
     useragent (0.16.11)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -294,6 +307,7 @@ DEPENDENCIES
   coffee-rails (~> 5.0)
   dartsass-sprockets
   debug
+  devise (~> 4.9)
   geocoder
   gmaps4rails
   importmap-rails
