@@ -4,6 +4,15 @@ class BooksController < ApplicationController
     redirect_to @book.user, notice: "Book created."
   end
 
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to @book.user, notice: "Book was successfully updated."
+    else
+      redirect_to @book.user, alert: "Book failed to update."
+    end
+  end
+
   def destroy
     @book = Book.find(params[:id])
     book.destroy
