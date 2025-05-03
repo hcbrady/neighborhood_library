@@ -1,6 +1,28 @@
-<h1><%=@user.full_name %></h1>
-<h1><%=@user.address.full_address %></h1>
-<a href="#edit_user" data-bs-toggle="modal" data-bs-target="#edit_user">Edit</a>
+<div class="text-center">
+  <h1><%=@user.full_name %></h1>
+  <p><%=@user.address.full_address %><p>
+  <a href="#edit_user" data-bs-toggle="modal" data-bs-target="#edit_user">Edit</a>
+  <a href="#add_book" data-bs-toggle="modal" data-bs-target="#add_book">Add Book</a>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% current_user.books.each do |book| %>
+    <tr>
+      <td><%=book.title%></td>
+      <td><%=book.author%></td>
+      <td><%=book.genre%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
 
 <div class="modal" id="edit_user" tabindex="-1">
   <div class="modal-dialog">
@@ -14,6 +36,30 @@
         <%= f.input :first_name %>
         <%= f.input :last_name %>
         <%= f.input :email %>
+      </div>
+      <div class="modal-footer">
+        <%= f.button :submit, 'Save Changes', class: "btn blue" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<div class="modal" id="add_book" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for Book.new do |f| %>
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.input :title %>
+        <%= f.input :author %>
+        <%= f.input :genre %>
       </div>
       <div class="modal-footer">
         <%= f.button :submit, 'Save Changes', class: "btn blue" %>
