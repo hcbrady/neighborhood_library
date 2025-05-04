@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[show update]
 
   resources :books, only: %i[create update destroy]
+  get "about" => "application#about"
 end
