@@ -27,7 +27,8 @@ class BooksController < ApplicationController
             :user_id,
             :title,
             :author,
-            :genre
+            :genre,
+            :reviews
           )
   end
 end
